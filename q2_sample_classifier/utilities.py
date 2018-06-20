@@ -133,6 +133,7 @@ def _extract_important_features(index, top):
         imp = pd.DataFrame(top, columns=["importance"])
     imp.index = index
     imp.index.name = 'feature'
+    imp = sort_importances(imp, ascending=False)
     return imp
 
 
